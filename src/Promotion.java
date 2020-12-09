@@ -20,6 +20,11 @@ public class Promotion
         return this.tab.size();
     }
 
+    public ArrayList<Etudiant> getEtudiants()
+    {
+        return this.tab;
+    }
+
     @Override
     public String toString() {
         String result = "La promotion contient " + this.getNbEtudiants() + " étudiant(s)";

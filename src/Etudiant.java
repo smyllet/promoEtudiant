@@ -17,10 +17,14 @@ public class Etudiant
         this.moyenne = moyenne;
     }
 
+    public double getMoyenne() {
+        return moyenne;
+    }
+
     @Override
     public String toString() {
         return "Étudiant -> " +
-                "nom : " + this.nom +
+                "Nom : " + this.nom +
                 ", Date de naissance : " + this.dateNaissance +
                 ", Moyenne : " + this.moyenne;
     }
