@@ -40,4 +40,15 @@ public class Promotion
 
         return result;
     }
+
+    public double getMoyenneGeneral()
+    {
+        double totalNote = 0;
+        int nbNote;
+
+        for(nbNote = 0; nbNote < this.getNbEtudiants(); nbNote++)
+            totalNote = totalNote + this.tab.get(nbNote).getMoyenne();
+
+        return totalNote/nbNote;
+    }
 }
