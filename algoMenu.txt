@@ -1,0 +1,81 @@
+Algorithme "PromoEtudiant"
+Variable :
+	Promotion : promo
+	Etudiant : etudiant
+	CC : input, nom, dateNaissance
+	double : moyenne
+	bool : result, exit
+Debut
+	// Instantiation de la promotion
+	promo <- Promotion()
+	
+	// Message de bienvenue
+	Afficher "Bonjour, bienvenue dans votre programme de gestion étudiants"
+	
+	// Valeur prérenseigné ?
+	Répéter
+		Afficher "Souhaitez vous commencer avec des valeur prédéfini (oui/non)"
+		Saisir input
+	TanQue((input != "oui") ET (input != "non"))
+	
+	Si (input = "oui") alors
+		promo.addEtudiant(Etudiant("Bob", "12/05/2000", 13))
+		promo.addEtudiant(Etudiant("Alice", "26/11/1999", 17))
+		promo.addEtudiant(Etudiant("Pierre", "01/02/2000", 13))
+	FinSi
+	
+	// Boucle menu
+	exit <- Faux
+	Répéter
+		Afficher "Menu principal, que souhaitez vous faire ? (list, ajouter, éditer, moyenne, quitter)"
+		Saisir input
+		
+		Suivant input
+			Cas "list"
+				Afficher "promo.toString()"
+			Cas "ajouter"
+				Si(promo.getNbEtudiants() < 40)
+					alors
+						Afficher "Nom de l'étudiant : "
+						Saisir nom
+						Afficher "Date de naissance : "
+						Saisir dateNaissance
+						Afficher "Moyenne : "
+						Saisir Moyenne
+						result <- promo.addEtudiant(Etudiant(nom, dateNaissance, moyenne))
+						Si(result = faux) alors Afficher "Erreur lors de l'ajout de l'étudiant"
+						FinSi
+					sinon Afficher "La promotion contient déjà 40 étudiants"
+				FinSi
+			Cas "éditer"
+				Afficher (promo.getNameList())
+				Répéter
+					Afficher "Numéro de l'étudiant que vous souhaitez modifier : "
+					Saisir idEtudiant
+					Si((idEtudiant > 0) et (idEtudiant <= promo.getNbEtudiant()))
+						Alors
+							etudiant <- promo.getEtudiants()[idEtudiant]
+							Afficher etudiant.toString()
+							Afficher "Nouvelle moyenne de l'étudiant : "
+							Saisir moyenne
+							etudiant.setMoyenne(moyenne)
+							
+							idEtudiant <- 0 // Pour sortir de la boucle
+						Sinon Si(idEtudiant == 0)
+							Alors
+								Afficher "Retour au menu principal"
+							Sinon
+								Afficher "Numéro d'étudiant invalide"
+						FinSi
+					FinSi
+				Tant Que (idEtudiant != 0)
+			Cas "moyenne"
+				Afficher "La moyenne général de la promotion est de", promo.getMoyenneGeneral()
+			Cas "Quitter"
+				exit <- Vrai
+			Défaut
+				Afficher "Commande invalide"
+		FinSuivant
+	TanQue(exit = faux)
+	Afficher "Au revoir et à bientôt !"
+Fin
