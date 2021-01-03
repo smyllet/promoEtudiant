@@ -34,6 +34,6 @@ public class testEtudiant
     @Test
     void testToString()
     {
-        assertEquals("Étudiant -> Nom : Alice, Date de naissance : 26/11/1999, Moyenne : 17.0", etudiant2.toString(), "Erreur sur la récupération en text de l'étudiant 2");
+        assertEquals("Nom : Alice, Date de naissance : 26/11/1999, Moyenne : 17.0", etudiant2.toString(), "Erreur sur la récupération en text de l'étudiant 2");
     }
 }

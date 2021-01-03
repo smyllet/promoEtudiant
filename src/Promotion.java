@@ -12,8 +12,12 @@ public class Promotion
         this.tab = tab;
     }
 
-    public void addEtudiant(Etudiant etudiant) {
-        this.tab.add(etudiant);
+    public boolean addEtudiant(Etudiant etudiant) {
+        if(this.getNbEtudiants() < 40) {
+            this.tab.add(etudiant);
+            return true;
+        }
+        else return false;
     }
 
     public int getNbEtudiants() {
@@ -49,6 +53,17 @@ public class Promotion
         for(nbNote = 0; nbNote < this.getNbEtudiants(); nbNote++)
             totalNote = totalNote + this.tab.get(nbNote).getMoyenne();
 
-        return totalNote/nbNote;
+        return (double)Math.round((totalNote/nbNote) * 100) / 100;
+    }
+
+    public String getNameList() {
+        String result = "";
+
+        for(int i = 0; i < this.getNbEtudiants(); i++)
+        {
+            result += i+1 + " - " + this.tab.get(i).getNom() + "\n";
+        }
+
+        return result;
     }
 }
