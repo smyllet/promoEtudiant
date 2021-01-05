@@ -1,4 +1,5 @@
-# Énoncé
+# Sujet
+## Énoncé
 On désire gérer une promotion d'étudiants, sachant qu'une promotion comporte au plus 40 étudiants.
 
 Chaque étudiant est caractérisé par les attributs suivants : un nom, une date de naissance et une moyenne générale de toutes ses notes.
@@ -10,7 +11,7 @@ On désire pouvoir :
 3. Afficher la liste de tous les étudiants avec leur moyenne.
 4. Afficher la moyenne générale de tous les étudiants.
 
-# Étapes de réalisation
+## Étapes de réalisation
 1. Créer 2 classes : la classe Etudiant et la classe Promotion
 
 ### Classe Etudiant
@@ -39,3 +40,14 @@ Méthodes publiques
 + ~~Afficher()~~ _même chose que la classe Etudiant_
 + getMoyenneGeneral() : double
 + ajouterEtudiant()
+
+# Information Complémentaire
+## Installation
+1) Pour les testes unitaire, importé JUnit 5.4.
+2) Puis, via MAVEN, installer la librairie `org.hamcrest:hamcrest:2.22`
+
+## Emplacement Fichier
+- L'agorithme ce trouve dans le fichier `algoMenu.txt`
+- Les classes Promotion et Etudiant ce trouve dans le dossier `src`
+- Le programme d'utilisation des classes est aussi dans le dossier `src` et ce nomme `promoEtudiant.java`
+- Les classes de tests ce trouve dans le dossier `tests` à la racine du projet
