@@ -44,7 +44,7 @@ Méthodes publiques
 # Information Complémentaire
 ## Installation
 1) Pour les testes unitaire, importé JUnit 5.4.
-2) Puis, via MAVEN, installer la librairie `org.hamcrest:hamcrest:2.22`
+2) Puis, via MAVEN, installer la librairie `org.hamcrest:hamcrest:2.2`
 
 ## Emplacement Fichier
 - L'agorithme ce trouve dans le fichier `algoMenu.txt`
